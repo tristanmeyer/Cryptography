@@ -10,25 +10,32 @@ Write and submit a program that encrypts and decrypts user data.
 See the detailed requirements at https://github.com/HHS-IntroProgramming/Cryptography/blob/master/README.md
 """
 associations = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 .,:;'\"/\\<>(){}[]-=_+?!"
-associations.find(char)
-print(associations)
 
 options = input("Enter e to encrypt, d to decrypt, or q to quit: ")
 
 if options == "e":
-    message = input("Message: )
-    key = input("Key: )
+    message = str(input("Message: "))
+    key = str(input("Key: "))
+    for a in message:
+        nmessage = str(associations.find(a))
+        for b in key:
+            nkey = str(associations.find(b))
+            z = zip(nmessage,nkey)
+            for x in z:
+                print(x[0],x[1])
     
 #-------------------------------------------------------------------------------
 if options == "d":
-    emessage = input("Message: )
-    dkey = input("Key: )
+    nmessage = input("Message: ")
+    nkey = input("Key: ")
     
 #-------------------------------------------------------------------------------
 if options == "q":
+    print("Goodbye!")
     
 if options != "e" and options != "d" and options != "q":
-    print("Did not understand command, try again."
+    print("Did not understand command, try again.")
+
 
 
 
