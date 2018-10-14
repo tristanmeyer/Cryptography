@@ -13,16 +13,22 @@ associations = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 .
 
 options = input("Enter e to encrypt, d to decrypt, or q to quit: ")
 
+t = []
+m = []
 if options == "e":
-    message = str(input("Message: "))
-    key = str(input("Key: "))
+    message = list(input("Message: "))
+    key = list(input("Key: "))
     for a in message:
         nmessage = str(associations.find(a))
-        for b in key:
-            nkey = str(associations.find(b))
-            z = zip(nmessage,nkey)
-            for x in z:
-                print(x[0],x[1])
+        lmessage = list(nmessage)
+        t = t + lmessage
+    for b in key:
+        nkey = str(associations.find(b))
+        lkey = list(nkey)
+        m = m + lkey
+    c = zip(t, m)
+    for x in c:
+        print(x[0],x[1])
     
 #-------------------------------------------------------------------------------
 if options == "d":
