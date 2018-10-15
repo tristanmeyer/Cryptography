@@ -20,13 +20,11 @@ if options == "e":
     key = list(input("Key: "))
     for a in message:
         nmessage = str(associations.find(a))
-        lmessage = list(nmessage)
-        t = t + lmessage
+        t.append(nmessage)
+    print("t",t)
     for b in key:
         nkey = str(associations.find(b))
-        lkey = list(nkey)
-        print(lkey)
-        m = m + lkey
+        m.append(nkey)
     c = zip(t, m)
     for x in c:
         print(x[0],x[1])
