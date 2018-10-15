@@ -19,17 +19,17 @@ if options == "e":
     message = list(input("Message: "))
     lmessage = len(message)
     key = list(input("Key: "))
+    nnkey = key * lmessage
     for a in message:
         nmessage = str(associations.find(a))
         t.append(nmessage)
-    for b in key:
-        nnkey = key * lmessage
+    for b in nnkey:
         nkey = str(associations.find(b))
         m.append(nkey)
-        m = nkey * lmessage
-    c = zip(t, m)
+    c = zip(t , m)
     for x in c:
-        print(x[0],x[1])
+        print(x[0] , x[1])
+
     
 #-------------------------------------------------------------------------------
 if options == "d":
