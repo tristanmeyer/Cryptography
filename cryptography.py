@@ -17,14 +17,16 @@ t = []
 m = []
 if options == "e":
     message = list(input("Message: "))
+    lmessage = len(message)
     key = list(input("Key: "))
     for a in message:
         nmessage = str(associations.find(a))
         t.append(nmessage)
-    print("t",t)
     for b in key:
+        nnkey = 
         nkey = str(associations.find(b))
         m.append(nkey)
+        m = nkey * lmessage
     c = zip(t, m)
     for x in c:
         print(x[0],x[1])
