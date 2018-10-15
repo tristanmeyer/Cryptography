@@ -23,7 +23,7 @@ if options == "e":
         nmessage = str(associations.find(a))
         t.append(nmessage)
     for b in key:
-        nnkey = 
+        nnkey = key * lmessage
         nkey = str(associations.find(b))
         m.append(nkey)
         m = nkey * lmessage
