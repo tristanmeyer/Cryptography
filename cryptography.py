@@ -1,7 +1,7 @@
 """
 cryptography.py
 Author: Tristan Meyer
-Credit: <list sources used, if any>
+Credit: https://www.dreamincode.net/forums/topic/214465-add-two-lists/
 
 Assignment:
 
@@ -11,30 +11,49 @@ See the detailed requirements at https://github.com/HHS-IntroProgramming/Cryptog
 """
 associations = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 .,:;'\"/\\<>(){}[]-=_+?!"
 
+
+
 options = input("Enter e to encrypt, d to decrypt, or q to quit: ")
 
 t = []
 m = []
+s = ""
 if options == "e":
     message = list(input("Message: "))
     lmessage = len(message)
     key = list(input("Key: "))
     nnkey = key * lmessage
     for a in message:
-        nmessage = str(associations.find(a))
+        nmessage = associations.find(a)
         t.append(nmessage)
     for b in nnkey:
-        nkey = str(associations.find(b))
+        nkey = associations.find(b)
         m.append(nkey)
-    c = zip(t , m)
-    for x in c:
-        print(x[0] , x[1])
+    c = [(t + m) for t, m in zip(t, m)]
+    for d in c:
+        e = ''.join([associations[f % len(associations)] for f in c])
+    print(e)
 
     
 #-------------------------------------------------------------------------------
 if options == "d":
-    nmessage = input("Message: ")
-    nkey = input("Key: ")
+    message = list(input("Message: "))
+    lmessage = len(message)
+    key = list(input("Key: "))
+    nnkey = key * lmessage
+    for a in message:
+        nmessage = associations.find(a)
+        t.append(nmessage)
+    for b in nnkey:
+        nkey = associations.find(b)
+        m.append(nkey)
+    c = [(t - m) for t, m in zip(t, m)]
+    for d in c:
+        e = ''.join([associations[f % len(associations)] for f in c])
+    print(e)
+
+
+    
     
 #-------------------------------------------------------------------------------
 if options == "q":
