@@ -52,8 +52,9 @@ if options == "d":
         e = ''.join([associations[f % len(associations)] for f in c])
     print(e)
 
+if options == "d" or options == "e": 
+    options = input("Enter e to encrypt, d to decrypt, or q to quit: ")
 
-    
     
 #-------------------------------------------------------------------------------
 if options == "q":
@@ -61,6 +62,7 @@ if options == "q":
     
 if options != "e" and options != "d" and options != "q":
     print("Did not understand command, try again.")
+    options = input("Enter e to encrypt, d to decrypt, or q to quit: ")
 
 
 
